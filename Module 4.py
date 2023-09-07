@@ -1,7 +1,7 @@
 #Module 4
 #Exercise 1
 #Write a program that uses a while loop to print out all numbers divisible by three in the range of 1-1000.
-"""
+
 i = 3
 while i <= 1000:
     if not i % 3:
@@ -82,7 +82,7 @@ while type_username != "test" and type_password != "check":
 
 
 print("WELCOME!")
-"""
+
 
 #Exercise 6
 
