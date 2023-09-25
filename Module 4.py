@@ -1,7 +1,7 @@
 #Module 4
 #Exercise 1
 #Write a program that uses a while loop to print out all numbers divisible by three in the range of 1-1000.
-"""
+
 i = 3
 while i <= 1000:
     if not i % 3:
@@ -82,7 +82,7 @@ while type_username != "test" and type_password != "check":
 
 
 print("WELCOME!")
-"""
+
 
 #Exercise 6
 
@@ -97,4 +97,4 @@ for i in range(0, integer):
     if (Points_in_square[0] ** 2 + Points_in_square[1] ** 2) < 1:
         Points_in_circle += 1
 
-    print("The estimated pi value is:", 4 * Points_in_circle / integer)
+print("The estimated pi value is:", 4 * Points_in_circle / integer)
