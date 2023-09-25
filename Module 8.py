@@ -7,64 +7,64 @@
 # (town) from the airport database used on this course.
 # The ICAO codes are stored in the ident column of the airport table.
 
-# import mysql.connector
-#
-# connection=mysql.connector.connect(
-#     host= '127.0.0.1',
-#     port=3306,
-#     database='first_flight_game',
-#     user='dbuser',
-#     password='pass_word',
-#     autocommit=True
-# )
-#
-# def getICAOairport(ident):
-#     sql = "SELECT name, municipality FROM airport"
-#     sql += " WHERE ident ='" + ident + "'"
-#     print(sql)
-#     cursor = connection.cursor()
-#     cursor.execute(sql)
-#     result = cursor.fetchall()
-#     if cursor.rowcount > 0:
-#         for row in result:
-#             print(f"The Airport name is: {row[0]} and municipality is: {row[1]}")
-#     return
-#
-#
-# ident = input("Enter the ICAO: ")
-# getICAOairport(ident)
-#
-#
-# # Exercise 2
-#
-# # Write a program that asks the user to enter the area code (for example FI)
-# # and prints out the airports located in that country ordered by airport type.
-# # For example, Finland has 65 small airports, 15 helicopter airports and so on.
-#
-# import mysql.connector
-# connection=mysql.connector.connect(
-#     host= '127.0.0.1',
-#     port=3306,
-#     database='first_flight_game',
-#     user='dbuser',
-#     password='pass_word',
-#     autocommit=True
-# )
-#
-# def airport(iso_country):
-#     sql="select name from airport"
-#     sql=sql+ " Where iso_country='"+ iso_country +" '"+"order by type "
-#     print(sql)
-#     cursor = connection.cursor()
-#     cursor.execute(sql)
-#     result = cursor.fetchall()
-#     if cursor.rowcount > 0:
-#         for row in result:
-#             print(f"the name of airport {row[0]}")
-#     return
-# user=input("enter area code:")
-# airport(user)
-#
+import mysql.connector
+
+connection=mysql.connector.connect(
+    host= '127.0.0.1',
+    port=3306,
+    database='first_flight_game',
+    user='dbuser',
+    password='pass_word',
+    autocommit=True
+)
+
+def getICAOairport(ident):
+    sql = "SELECT name, municipality FROM airport"
+    sql += " WHERE ident ='" + ident + "'"
+    print(sql)
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    result = cursor.fetchall()
+    if cursor.rowcount > 0:
+        for row in result:
+            print(f"The Airport name is: {row[0]} and municipality is: {row[1]}")
+    return
+
+
+ident = input("Enter the ICAO: ")
+getICAOairport(ident)
+
+
+# Exercise 2
+
+# Write a program that asks the user to enter the area code (for example FI)
+# and prints out the airports located in that country ordered by airport type.
+# For example, Finland has 65 small airports, 15 helicopter airports and so on.
+
+import mysql.connector
+connection=mysql.connector.connect(
+    host= '127.0.0.1',
+    port=3306,
+    database='first_flight_game',
+    user='dbuser',
+    password='pass_word',
+    autocommit=True
+)
+
+def airport(iso_country):
+    sql="select name from airport"
+    sql=sql+ " Where iso_country='"+ iso_country +" '"+"order by type "
+    print(sql)
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    result = cursor.fetchall()
+    if cursor.rowcount > 0:
+        for row in result:
+            print(f"the name of airport {row[0]}")
+    return
+user=input("enter area code:")
+airport(user)
+
 # # Exercise 3
 # # Write a program that asks the user to enter the ICAO codes of two airports.
 # # The program prints out the distance between the two airports in kilometers.
